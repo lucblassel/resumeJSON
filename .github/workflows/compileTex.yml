@@ -11,7 +11,6 @@ jobs:
   compileTex:
     name: "compile .tex"
     runs-on: "ubuntu-latest"
-    container: "blang/latex:ctanfull"
     steps:
       - uses: actions/checkout@v2
         name: "check out repo"
