@@ -1,13 +1,10 @@
-name: "render PDF"
+name: "create and render PDF"
 
 on:
   push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
-  
+    paths: 
+      - "resume.json"
+
 jobs:
 
   # Make .tex file from .json format
@@ -25,7 +22,7 @@ jobs:
           python-version: "3.8"
           architecture: "x64"
 
-      - run: "python ./scripts/convertToTex.py --input ./resume.json --output ./tex/resume.tex"
+      - run: "python ./scripts/convertToTex.py --input resume.json --output tex/resume.tex"
         name: "generate .tex file"
 
   
@@ -38,7 +35,7 @@ jobs:
       - uses: actions/checkout@v2
         name: "check out repo"
 
-      - run: "cd ./tex"
+      - run: "cd ./tex && pwd && ls -a"
         name: "go to subdir"
 
       - run: "latexmk -xelatex resume.tex"

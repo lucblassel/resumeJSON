@@ -148,6 +148,8 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
 
+    print(args)
+
     resume = json.load(open(args.input, "r"))
 
     preamble = makePreamble()
