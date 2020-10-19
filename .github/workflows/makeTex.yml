@@ -26,7 +26,7 @@ jobs:
         name: "generate .tex file"
 
       - name: "commit tex file"
-        run: ./scripts/commitChanges tex/resume.tex
+        run: bash ./scripts/commitChanges tex/resume.tex
   
   # compile .tex file
   compileTex:
