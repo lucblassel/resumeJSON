@@ -4,6 +4,7 @@ on:
   push:
     paths: 
       - "resume.json"
+      - ".github/workflows/*"
 
 jobs:
 
