@@ -4,9 +4,9 @@ filename=$1
 
 # generate commit message
 if [ ${filename: -4} == ".tex" ]; then
-    message="creating .tex"
+    message='"creating .tex"'
 elif [ ${filename: -4} == ".pdf" ]; then
-    message="creating .pdf"
+    message='"creating .pdf"'
 else
     echo "error wrong input file"
     exit 1
