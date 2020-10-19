@@ -1,19 +1,19 @@
 name: "compile tex to PDF"
 
 on:
-  push: 
-    paths: 
-     - "tex/resume.tex"
-      - ".github/workflows/*"
+  push:
+    paths:
+      - "tex/resume.tex"
+      - ".github/workflows/compileTex.yml"
 
-jobs: 
+jobs:
   # compile .tex
   compileTex:
     name: "compile .tex"
     needs: makeTex
     runs-on: "ubuntu-latest"
     container: "blang/latex:ctanfull"
-    steps: 
+    steps:
       - uses: actions/checkout@v2
         name: "check out repo"
 

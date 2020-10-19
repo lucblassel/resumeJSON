@@ -2,18 +2,16 @@ name: "create Tex file"
 
 on:
   push:
-    paths: 
+    paths:
       - "resume.json"
-      - ".github/workflows/*"
+      - ".github/workflows/makeTex.yml"
 
 jobs:
-
   # Make .tex file from .json format
   makeTex:
     name: "make .tex"
     runs-on: "ubuntu-latest"
     steps:
-
       - uses: actions/checkout@v2
         name: "checkout repo"
 
