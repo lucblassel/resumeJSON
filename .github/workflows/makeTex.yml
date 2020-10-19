@@ -48,4 +48,4 @@ jobs:
             latexmk -xelatex resume.tex
 
       - name: "commit pdf file"
-        run: ./scripts/commitChanges tex/resume.pdf
+        run: ./scripts/commitChanges.sh tex/resume.pdf

@@ -27,7 +27,7 @@ else
     echo git commit -m $message
     git commit -m $message
     echo git push
-    # git push
+    git push
 fi
 
 exit 0
