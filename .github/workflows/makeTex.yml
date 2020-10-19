@@ -26,6 +26,12 @@ jobs:
       - run: "python ./scripts/convertToTex.py --input resume.json --output tex/resume.tex"
         name: "generate .tex file"
 
+      - name: "commit tex file"
+        run: |
+          git config --global user.name 'Luc Blassel'
+          git config --global user.email 'luc.blassel@gmail.com'
+          git commit -am "creating .tex"
+          git push
   
   # compile .tex
   compileTex:
@@ -41,5 +47,12 @@ jobs:
 
       - run: "latexmk -xelatex resume.tex"
         name: "compile tex in docker"
+
+      - name: "commit pdf"
+        run: |
+          git config --global user.name 'Luc Blassel'
+          git config --global user.email 'luc.blassel@gmail.com'
+          git commit -am "creating .pdf"
+          git push
 
 
