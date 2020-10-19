@@ -19,8 +19,10 @@ jobs:
       - run: "ls -a ./tex"
         name: "check tex/ subdir"
 
-      - run: "cd tex && latexmk -xelatex resume.tex"
+      - uses: "docker://blang/latex:ctanfull"
         name: "compile tex in docker"
+        with:
+          entrypoint: "cd tex && latexmk -xelatex resume.tex"
 
       - name: "commit pdf"
         run: |
