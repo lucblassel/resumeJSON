@@ -19,7 +19,7 @@ jobs:
       - run: "ls -a ./tex"
         name: "check tex/ subdir"
 
-      - run: "latexmk -xelatex tex/resume.tex"
+      - run: "cd tex && latexmk -xelatex resume.tex"
         name: "compile tex in docker"
 
       - name: "commit pdf"
