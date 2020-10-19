@@ -1,0 +1,176 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Luc Blassel",
+    "label": "Bioinformatics PhD student",
+    "image": "https://lucblassel.com/images/me.jpg",
+    "phone": "+33 6 59 68 91 01",
+    "email": "luc.blassel@gmail.com",
+    "url": "https://lucblassel.com",
+    "summary": "Interested in Machine learning and Biology, currently a PhD. student in bioinformatics using machine learning at the Institut Pasteur in Paris.",
+    "location": {
+      "city": "Paris",
+      "countryCode": "FR"
+    },
+    "profiles": [
+      {
+        "network": "github",
+        "username": "lucblassel",
+        "url": "https://github.com/lucblassel"
+      },
+      {
+        "network": "linkedin",
+        "username": "luc-blassel",
+        "url": "https://www.linkedin.com/in/luc-blassel/"
+      },
+      {
+        "network": "google scholar",
+        "username": "RYs6rFwAAAAJ",
+        "url": "https://scholar.google.com/citations?user=RYs6rFwAAAAJ"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Institut Pasteur",
+      "location": "Paris France",
+      "description": "Research institute",
+      "position": "PhD student",
+      "url": "https://research.pasteur.fr/en/project/applying-machine-learning-to-sequence-analysis-phd-luc-blassel-prairie/",
+      "startDate": "2020-01-01",
+      "summary": "Using machine learning for biological sequence analysis.",
+      "highlights": [
+        "Funded by the Paris AI Research Institute (PRAIRIE)",
+        "Goal: using deep learning for more accurate contest-aware protein sequence alignment"
+      ]
+    },
+    {
+      "name": "Institut Pasteur",
+      "location": "Paris France",
+      "description": "Research institute",
+      "position": "Research engineer",
+      "url": "https://research.pasteur.fr/en/project/drm-hiv/",
+      "startDate": "2018-04-01",
+      "endDate": "2019-12-31",
+      "summary": "Using machine learning and big data to explore the drug resistance landscape in HIV.",
+      "highlights": [
+        "Using ML methods to find new Drug resistance mutations",
+        "Presentation of the project at MCEB 2019 conference",
+        "Usage of Snakemake pipelines in a SLURM HPC environment"
+      ]
+    },
+    {
+      "name": "CapitalData",
+      "location": "Paris France",
+      "description": "Digital Marketing company",
+      "position": "Data scientist Intern",
+      "url": "https://www.capitaldata.fr/",
+      "startDate": "2017-03-01",
+      "endDate": "2017-08-31",
+      "summary": "Development on automated data validation and anomaly detection pipelines using R, Golang and Python.",
+      "highlights": [
+        "Usage of R caret and Python scikit-learn libraries",
+        "Internal client-oriented reporting with MySQL, BIME, Periscope and Mode"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Paris Dauphine University",
+      "url": "https://dauphine.psl.eu/formations/masters/informatique/m2-intelligence-artificielle-systemes-donnees",
+      "area": "Machine learning",
+      "location": "Paris France",
+      "studyType": "Master in Science",
+      "startDate": "2017-09-01",
+      "endDate": "2018-08-31",
+      "score": "15.58/20",
+      "courses": [
+        "Reinforcement learning",
+        "Data Mining",
+        "Deep learning",
+        "Double diploma with AgroParisTech"
+      ]
+    },
+    {
+      "institution": "AgroParisTech",
+      "url": "http://www.agroparistech.fr/ufr-info/iodaa/",
+      "area": "Biology - Machine learning",
+      "location": "Paris France",
+      "studyType": "Diplôme d'ingénieur",
+      "startDate": "2014-09-01",
+      "endDate": "2018-08-31",
+      "score": "15.58/20",
+      "courses": [
+        "Microbiology",
+        "Immunology",
+        "Projects in Java, C and Matlab",
+        "Advanced statistics and linear modeling",
+        "Machine learning"
+      ]
+    },
+    {
+      "institution": "Ecole Saint Hilaire",
+      "url": "https://en.wikipedia.org/wiki/Classe_preparatoire_aux_grandes_ecoles",
+      "area": "BCPST preparatory class",
+      "location": "Paris France",
+      "studyType": "National Competitive exam",
+      "startDate": "2011-09-01",
+      "endDate": "2014-05-01",
+      "courses": ["ranked 201/1967 (Veto)", "ranked 481/2991 (Agro)"]
+    }
+  ],
+  "publications": [
+    {
+      "name": "COVID-Align: Accurate online alignment of hCoV-19 genomes using a profile HMM ",
+      "publisher": "Bioinformatics",
+      "releaseDate": "2020-10-12",
+      "url": "https://doi.org/10.1093/bioinformatics/btaa871",
+      "summary": "Using HMM to accurately align a large number of hCoV-19 virus full genome sequences and compute useful summary statistics. Available as a web service at covalign.pasteur.fr"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Data Science",
+      "level": "Confirmed",
+      "keywords": [
+        "R",
+        "Python",
+        "scikit-learn",
+        "MySQL",
+        "Keras",
+        "Data visualization"
+      ]
+    },
+    {
+      "name": "Software development",
+      "level": "Confirmed",
+      "keywords": ["Git", "Github"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native"
+    },
+    {
+      "language": "French",
+      "fluency": "Native"
+    },
+    {
+      "language": "German",
+      "fluency": "B1",
+      "additional": "1 mo. program at Goëthe Institute in Germany"
+    },
+    {
+      "language": "Chinese",
+      "fluency": "Intermediate",
+      "additional": "5 and 1 mo. programs in Shanghai SISU and Beijing UIR"
+    }
+  ],
+  "meta": {
+    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2020-10-19",
+    "theme": "elegant"
+  }
+}
