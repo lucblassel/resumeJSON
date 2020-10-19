@@ -11,6 +11,12 @@ def makeSocials(networks):
             socials[-1] += "{}"
     return "\n".join(socials)
 
+def makeLink(link):
+    if link == "": return ""
+    shortened = link.replace("https://", "").replace("http://", "").replace("www.", "")
+    return (
+        f"\\href{{{link}}}{{More: \\tiny{{{shortened}}}}}"
+    )
 
 def makeHeader(headerDict):
     firstName, lastName = headerDict["name"].split()
@@ -39,7 +45,7 @@ def makeWorkHighlights(item):
     for highlight in item["highlights"]:
         s += f"\\item{{{highlight}}}\n"
     if (url := item.get("url")) is not None and url != "":
-        s += f"\\item{{\\emph{{\\href{{{item['url']}}}{{More at this link}}}}}}\n"
+        s += f"\\item{{\\emph{{{makeLink(url)}}}\n"
     return s + "\\end{cvitems}"
 
 
@@ -67,7 +73,7 @@ def makeEducationSummary(item):
     return (
         "\\begin{cvitems}\n"
         f"{courses}\n"
-        f"\\item{{{scoreLine}\\href{{{url}}}{{more information at this link}}}}\n"
+        f"\\item{{{scoreLine}{makeLink(url)}\n"
         "\\end{cvitems}"
     )
 
