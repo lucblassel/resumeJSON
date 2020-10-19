@@ -14,6 +14,8 @@ def makeSocials(networks):
 def makeLink(link):
     if link == "": return ""
     shortened = link.replace("https://", "").replace("http://", "").replace("www.", "")
+    for char in "\\$_&":
+        shortened = shortened.replace(char, f"\{char}")
     return (
         f"\\href{{{link}}}{{More: \\tiny{{{shortened}}}}}"
     )
@@ -45,7 +47,7 @@ def makeWorkHighlights(item):
     for highlight in item["highlights"]:
         s += f"\\item{{{highlight}}}\n"
     if (url := item.get("url")) is not None and url != "":
-        s += f"\\item{{\\emph{{{makeLink(url)}}}\n"
+        s += f"\\item{{\\emph{{ {makeLink(url)} }} }}\n"
     return s + "\\end{cvitems}"
 
 
@@ -64,7 +66,7 @@ def makeWorkItem(workItem):
 def makeEducationSummary(item):
     url = item.pop('url')
     score = item.pop('score', "")
-    scoreLine = f"score: {score}\\quad - \\quad" if score != "" else ""
+    scoreLine = f"score: {score}~-~" if score != "" else ""
     courses = "\n".join([
         f"\\item{{{course}}}" for course in item['courses']
     ])
@@ -73,7 +75,7 @@ def makeEducationSummary(item):
     return (
         "\\begin{cvitems}\n"
         f"{courses}\n"
-        f"\\item{{{scoreLine}{makeLink(url)}\n"
+        f"\\item{{{scoreLine}{makeLink(url)}}}\n"
         "\\end{cvitems}"
     )
 
