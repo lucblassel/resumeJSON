@@ -5,7 +5,7 @@ on:
     paths:
       - "resume.json"
       - ".github/workflows/makeTex.yml"
-      - "scripts/convertToTex.py"
+      - "scripts/*"
 
 jobs:
   # Make .tex file from .json format
