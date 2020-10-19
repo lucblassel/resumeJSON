@@ -1,0 +1,32 @@
+name: "compile tex to PDF"
+
+on:
+  push: 
+    paths: 
+     - "tex/resume.tex"
+      - ".github/workflows/*"
+
+jobs: 
+  # compile .tex
+  compileTex:
+    name: "compile .tex"
+    needs: makeTex
+    runs-on: "ubuntu-latest"
+    container: "blang/latex:ctanfull"
+    steps: 
+      - uses: actions/checkout@v2
+        name: "check out repo"
+
+      - run: "cd ./tex && pwd && ls -a"
+        name: "go to subdir"
+
+      - run: "latexmk -xelatex resume.tex"
+        name: "compile tex in docker"
+
+      - name: "commit pdf"
+        run: |
+          git config --global user.name 'Luc Blassel'
+          git config --global user.email 'luc.blassel@gmail.com'
+          git add tex/resume.pdf
+          git commit -m "creating .pdf"
+          git push
