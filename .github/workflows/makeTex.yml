@@ -1,0 +1,47 @@
+name: "render PDF"
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  
+jobs:
+
+  # Make .tex file from .json format
+  makeTex:
+    name: "make .tex"
+    runs-on: "ubuntu-latest"
+    steps:
+
+      - uses: actions/checkout@v2
+        name: "checkout repo"
+
+      - uses: actions/setup-python@v2
+        name: "set up python"
+        with:
+          python-version: "3.8"
+          architecture: "x64"
+
+      - run: "python ./scripts/convertToTex.py --input ./resume.json --output ./tex/resume.tex"
+        name: "generate .tex file"
+
+  
+  # compile .tex
+  compileTex:
+    name: "compile .tex"
+    runs-on: "ubuntu-latest"
+    container: "blang/latex:ctanfull"
+    steps: 
+      - uses: actions/checkout@v2
+        name: "check out repo"
+
+      - run: "cd ./tex"
+        name: "go to subdir"
+
+      - run: "latexmk -xelatex resume.tex"
+        name: "compile tex in docker"
+
+
