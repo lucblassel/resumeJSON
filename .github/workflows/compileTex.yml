@@ -10,7 +10,6 @@ jobs:
   # compile .tex
   compileTex:
     name: "compile .tex"
-    needs: makeTex
     runs-on: "ubuntu-latest"
     container: "blang/latex:ctanfull"
     steps:
