@@ -30,12 +30,14 @@ jobs:
         run: |
           git config --global user.name 'Luc Blassel'
           git config --global user.email 'luc.blassel@gmail.com'
-          git commit -am "creating .tex"
+          git add tex/resume.tex
+          git commit -m "creating .tex"
           git push
   
   # compile .tex
   compileTex:
     name: "compile .tex"
+    needs: makeTex
     runs-on: "ubuntu-latest"
     container: "blang/latex:ctanfull"
     steps: 
@@ -52,7 +54,8 @@ jobs:
         run: |
           git config --global user.name 'Luc Blassel'
           git config --global user.email 'luc.blassel@gmail.com'
-          git commit -am "creating .pdf"
+          git add tex/resume.pdf
+          git commit -m "creating .pdf"
           git push
 
 
