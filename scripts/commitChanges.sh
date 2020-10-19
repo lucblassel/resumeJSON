@@ -12,14 +12,21 @@ else
     exit 1
 fi
 
+echo "task is: $message"
+
 # commit and push if file changed
 if git diff --exit-code -s $filename; then
     echo "Nothing to commit."
 else
+    echo git config --global user.name 'Luc Blassel'
     git config --global user.name 'Luc Blassel'
+    echo git config --global user.email 'luc.blassel@gmail.com'
     git config --global user.email 'luc.blassel@gmail.com'
+    echo git add $filename
     git add $filename
-    git commit -m $message
+    echo git commit -m '$message'
+    git commit -m '$message'
+    echo git push
     git push
 fi
 
