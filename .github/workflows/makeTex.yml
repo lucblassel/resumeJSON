@@ -26,9 +26,26 @@ jobs:
         name: "generate .tex file"
 
       - name: "commit tex file"
-        run: |
-          git config --global user.name 'Luc Blassel'
-          git config --global user.email 'luc.blassel@gmail.com'
-          git add tex/resume.tex
-          git commit -m "creating .tex"
-          git push
+        run: ./scripts/commitChanges tex/resume.tex
+  
+  # compile .tex file
+  compileTex:
+    name: "compile .tex"
+    runs-on: "ubuntu-latest"
+    needs: makeTex
+    steps:
+      - uses: actions/checkout@v2
+        name: "check out repo"
+
+      - run: "ls -a ./tex"
+        name: "check tex/ subdir"
+
+      - uses: "xu-cheng/texlive-action/full@v1"
+        name: "compile tex in docker"
+        with:
+          run: |
+            cd tex/
+            latexmk -xelatex resume.tex
+
+      - name: "commit pdf file"
+        run: ./scripts/commitChanges tex/resume.pdf
