@@ -16,10 +16,10 @@ jobs:
       - uses: actions/checkout@v2
         name: "check out repo"
 
-      - run: "cd ./tex && pwd && ls -a"
-        name: "go to subdir"
+      - run: "ls -a ./tex"
+        name: "check tex/ subdir"
 
-      - run: "latexmk -xelatex resume.tex"
+      - run: "latexmk -xelatex tex/resume.tex"
         name: "compile tex in docker"
 
       - name: "commit pdf"
