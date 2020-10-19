@@ -9,13 +9,12 @@ elif [ ${filename: -4} == ".pdf" ]; then
     message="creating .pdf"
 else
     echo "error wrong input file"
-    exit 0
+    exit 1
 fi
 
 # commit and push if file changed
 if git diff --exit-code -s $filename; then
     echo "Nothing to commit."
-    exit 1
 else
     git config --global user.name 'Luc Blassel'
     git config --global user.email 'luc.blassel@gmail.com'
@@ -24,4 +23,4 @@ else
     git push
 fi
 
-exit 1
+exit 0
