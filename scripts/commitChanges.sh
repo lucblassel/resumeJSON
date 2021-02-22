@@ -23,11 +23,11 @@ else
     echo git config --global user.email 'luc.blassel@gmail.com'
     git config --global user.email 'luc.blassel@gmail.com'
     echo git add $filename
-    git add $filename
+    git add $filename || exit 1
     echo git commit -m $message
-    git commit -m $message
+    git commit -m $message || exit 1
     echo git push
-    git push
+    git push || exit 1
 fi
 
 exit 0
