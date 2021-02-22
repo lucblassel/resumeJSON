@@ -176,17 +176,15 @@
   "publications": [
     {
       "title": "COVID-Align: Accurate online alignment of hCoV-19 genomes using a profile HMM",
-	  "authors": "Frédéric Lemoine, Luc Blassel, Jakub Voznica, Gascuel Olivier",
+	  "authors": ["Frédéric Lemoine", "Luc Blassel", "Jakub Voznica", "Gascuel Olivier"],
 	  "journal": "Bioinformatics",
-	  "publisher": "Oxford University Press",
 	  "date": "2020/10/12",
 	  "doi": "https://doi.org/10.1093/bioinformatics/btaa871"
     },
     {
       "title": "Origin, evolution and global spread of SARS-CoV-2",
-	  "authors": "Anna Zhukova, Luc Blassel, Frédéric Lemoine, Marie Morel, Jakub Voznica, Olivier Gascuel",
-	  "journal": "Comptes Rendus. Biologies",
-	  "publisher": "Académie des sciences, Paris",
+	  "authors": ["Anna Zhukova", "Luc Blassel", "Frédéric Lemoine", "Marie Morel", "Jakub Voznica", "Olivier Gascuel"],
+	  "journal": "Comptes Rendus. Biologies (Académie des sciences)",
 	  "date": "2020/11/24",
 	  "doi": "https://doi.org/10.5802/crbiol.29"
     }

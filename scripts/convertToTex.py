@@ -11,13 +11,13 @@ def makeSocials(networks):
             socials[-1] += "{}"
     return "\n".join(socials)
 
-def makeLink(link):
+def makeLink(link, annot="More: "):
     if link == "": return ""
     shortened = link.replace("https://", "").replace("http://", "").replace("www.", "")
     for char in "\\$_&":
         shortened = shortened.replace(char, f"\{char}")
     return (
-        f"\\href{{{link}}}{{More: \\tiny{{{shortened}}}}}"
+        f"\\href{{{link}}}{{{annot}\\tiny{{{shortened}}}}}"
     )
 
 def makeHeader(headerDict):
@@ -70,7 +70,7 @@ def makeEducationSummary(item):
     courses = "\n".join([
         f"\\item{{{course}}}" for course in item['courses']
     ])
-    if url is None: 
+    if url is None:
         return ""
     return (
         "\\begin{cvitems}\n"
@@ -146,14 +146,54 @@ def makePreamble():
         r"\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}"+"\n"
     )
 
+def makeAuthors(authors):
+    if len(authors) == 1:
+        return authors[0]
+    return ", ".join(authors[:-1]) + " and " + authors[-1]
+
+
+def makePublicationItem(item):
+    title = item['title']
+    authors = makeAuthors(item['authors'])
+    journal = f"\\textit{{{item['journal']}}}"
+    date = parseDate(item['date'])
+    doi = makeLink(item['doi'], "")
+
+    return (
+        f"\\item {authors}, \"{title}\", {journal} ({date}), {doi}\n"
+    )
+
+
+def parseDate(dateString):
+    patterns = ["%d-%m-%Y", "%Y-%m-%d", "%Y/%m/%d", "%d/%m/%Y"]
+    for pattern in patterns:
+        try:
+            date = datetime.strptime(dateString, pattern)
+            return str(date.year)
+        except:
+            pass
+    return dateString
+
+
+def makePublicationSection(publications):
+    items = '\n'.join([
+        makePublicationItem(item) for item in publications
+    ])
+    return (
+        "\\cvsection{Publications}\n"
+        "\\begin{itemize}\n"
+        f"{items}"
+        "\\end{itemize}\n"
+    )
+
 if __name__ == "__main__":
-    
+
     import argparse
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--input', required=False, default="resume.json")
     parser.add_argument('--output', required=False, default="tex/resume.tex")
-    
+
     args = parser.parse_args()
 
     print(args)
@@ -165,6 +205,7 @@ if __name__ == "__main__":
     education = makeEducationSection(resume['education'])
     work = makeWorkSection(resume['work'])
     languages = makeLanguages(resume['languages'])
+    publications = makePublicationSection(resume['publications'])
 
     document = (
 f"""{preamble}
@@ -178,6 +219,7 @@ f"""{preamble}
 
 {work}
 {education}
+{publications}
 {languages}
 
 \\end{{document}}
