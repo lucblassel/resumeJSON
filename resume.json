@@ -1,11 +1,8 @@
 {
-  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Luc Blassel",
     "label": "Bioinformatics PhD student",
     "image": "https://lucblassel.com/images/me.jpg",
-    "phone": "+33 6 59 68 91 01",
-    "email": "luc.blassel@gmail.com",
     "url": "https://lucblassel.com",
     "summary": "Interested in Machine learning and Biology, currently a PhD. student in bioinformatics using machine learning at the Institut Pasteur in Paris.",
     "location": {
@@ -119,15 +116,6 @@
       "courses": ["ranked 201/1967 (Veto)", "ranked 481/2991 (Agro)"]
     }
   ],
-  "publications": [
-    {
-      "name": "COVID-Align: Accurate online alignment of hCoV-19 genomes using a profile HMM ",
-      "publisher": "Bioinformatics",
-      "releaseDate": "2020-10-12",
-      "url": "https://doi.org/10.1093/bioinformatics/btaa871",
-      "summary": "Using HMM to accurately align a large number of hCoV-19 virus full genome sequences and compute useful summary statistics. Available as a web service at covalign.pasteur.fr"
-    }
-  ],
   "skills": [
     {
       "name": "Data Science",
@@ -175,18 +163,47 @@
   },
   "publications": [
     {
-      "title": "COVID-Align: Accurate online alignment of hCoV-19 genomes using a profile HMM",
-	  "authors": ["Frédéric Lemoine", "Luc Blassel", "Jakub Voznica", "Gascuel Olivier"],
-	  "journal": "Bioinformatics",
-	  "date": "2020/10/12",
-	  "doi": "https://doi.org/10.1093/bioinformatics/btaa871"
+      "title": "Origin, evolution and global spread of SARS-CoV-2",
+      "authors": [
+        "Anna Zhukova",
+        "Luc Blassel",
+        "Frédéric Lemoine",
+        "Marie Morel",
+        "Jakub Voznica",
+        "Olivier Gascuel"
+      ],
+      "journal": "Comptes Rendus. Biologies (Académie des sciences)",
+      "date": "2020/11/24",
+      "doi": "https://doi.org/10.5802/crbiol.29",
+      "abstract": "SARS-CoV-2 is the virus responsible for the global COVID19 pandemic. We review what is known about the origin of this virus, detected in China at the end of December 2019. The genome of this virus mainly evolves under the effect of point mutations. These are generally neutral and have no impact on virulence and severity, but some appear to influence infectivity, notably the D614G mutation of the Spike protein. To date (30/09/2020) no recombination of the virus has been documented in the human host, and very few insertions and deletions. The worldwide spread of the virus was the subject of controversies that we summarize, before proposing a new approach free from the limitations of previous methods. The results show a complex scenario with, for example, numerous introductions to the USA and returns of the virus from the USA to certain countries including France."
     },
     {
-      "title": "Origin, evolution and global spread of SARS-CoV-2",
-	  "authors": ["Anna Zhukova", "Luc Blassel", "Frédéric Lemoine", "Marie Morel", "Jakub Voznica", "Olivier Gascuel"],
-	  "journal": "Comptes Rendus. Biologies (Académie des sciences)",
-	  "date": "2020/11/24",
-	  "doi": "https://doi.org/10.5802/crbiol.29"
+      "title": "COVID-Align: Accurate online alignment of hCoV-19 genomes using a profile HMM",
+      "authors": [
+        "Frédéric Lemoine",
+        "Luc Blassel",
+        "Jakub Voznica",
+        "Gascuel Olivier"
+      ],
+      "journal": "Bioinformatics",
+      "date": "2020/10/12",
+      "doi": "https://doi.org/10.1093/bioinformatics/btaa871",
+      "abstract": "##Motivation  \nThe first cases of the COVID-19 pandemic emerged in December 2019. Until the end of February 2020, the number of available genomes was below 1,000, and their multiple alignment was easily achieved using standard approaches. Subsequently, the availability of genomes has grown dramatically. Moreover, some genomes are of low quality with sequencing/assembly errors, making accurate re-alignment of all genomes nearly impossible on a daily basis. A more efficient, yet accurate approach was clearly required to pursue all subsequent bioinformatics analyses of this crucial data.  \n##Results  \nhCoV-19 genomes are highly conserved, with very few indels and no recombination. This makes the profile HMM approach particularly well suited to align new genomes, add them to an existing alignment and filter problematic ones. Using a core of ∼2,500 high quality genomes, we estimated a profile using HMMER, and implemented this profile in COVID-Align, a user-friendly interface to be used online or as standalone via Docker. The alignment of 1,000 genomes requires ∼50mn on our cluster. Moreover, COVID-Align provides summary statistics, which can be used to determine the sequencing quality and evolutionary novelty of input genomes (e.g. number of new mutations and indels)."
+    },
+    {
+      "title": "Using machine learning and big data to explore the drug resistance landscape in HIV",
+      "authors": [
+        "Luc Blassel",
+        "Anna Tostevin",
+        "Christian Julian Villabona-Arenas", 
+        "Martine Peeters", 
+        "Stéphane Hué", 
+        "Olivier Gascuel"
+      ],
+      "journal": "BioRXiv",
+      "date": "2021/03/16",
+      "doi": "https://doi.org/10.1101/2021.03.16.435621",
+      "abstract": "Almost all drugs to treat HIV target the Reverse Transcriptase (RT) and Drug resistance mutations (DRMs) appear in HIV under treatment pressure. Resistant strains can be transmitted and limit treatment options at the population level. Classically, multiple statistical testing is used to find DRMs, by comparing virus sequences of treated and naive populations. However, with this method, each mutation is considered individually and we cannot hope to reveal any interaction (epistasis) between them. Here, we used machine learning to discover new DRMs and study potential epistasis effects. We applied this approach to a very large UK dataset comprising ≈ 55, 000 RT sequences. Results robustness was checked on different UK and African datasets.  \nSix new mutations associated to resistance were found. All six have a low genetic barrier and show high correlations with known DRMs. Moreover, all these mutations are close to either the active site or the regulatory binding pocket of RT. Thus, they are good candidates for further wet experiments to establish their role in drug resistance. Importantly, our results indicate that epistasis seems to be limited to the classical scheme where primary DRMs confer resistance and associated mutations modulate the strength of the resistance and/or compensate for the fitness cost induced by DRMs."
     }
   ]
 }
